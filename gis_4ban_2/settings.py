@@ -24,7 +24,7 @@ while True:
     if not line:
         break
     line = line.replace('\n', '')
-    start = line.fine('=')
+    start = line.find('=')
     key = line[:start]
     value = line[start+1:]
     env_list[key] = value
@@ -34,7 +34,7 @@ while True:
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ofs&#dhzpz!!40ntt(zfwl57h8d)0ru^k1kjq5!)b-o!sgyfhc'
+SECRET_KEY = env_list['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
