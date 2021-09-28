@@ -20,6 +20,10 @@ services:
     volumes:
       - gis_4ban_static:/home/gis_4ban_2/staticfiles/
       - gis_4ban_media:/home/gis_4ban_2/media/
+    secrets:
+      - DJANGO_SECRET_KEY
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
   mariadb:
     image: mariadb:10.5
